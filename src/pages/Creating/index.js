@@ -16,7 +16,7 @@ import { Content, HeaderContent, BodyContent, RoundCheck, TeamType, Field, Butto
 
 const Creating = () =>{
     const [players, setPlayers] = useState([])
-    const [tags, setTags] = useState(['NodeJS'])
+    const [tags, setTags] = useState([])
 
     function handleAddTag(event){
         console.log(event.key)

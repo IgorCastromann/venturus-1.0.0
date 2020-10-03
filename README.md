@@ -27,5 +27,7 @@ Modelo página 2: Similar ao primeiro, porém com apenas um index.js e um styles
 Foi criada, também, uma pasta global, com um arquivo styles.js no qual se refere a toda estilização global das páginas.
 Optei por não utilizar do flexbox na hora de posicionar os componentes/elementos em tela, pois ouvi de um amigo que isso é um dos problemas na hora de criar um site/app para web e mobile, então fiz colocando algumas divs/sections a mais, para dar o mesmo efeito e não precisar refatorar na hora de versionar para mobile.
 
+Adicionei ao logo antes do Squad Management Tool um Link que leva de volta a página Dashboard.
+
 
 

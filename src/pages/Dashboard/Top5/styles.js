@@ -20,6 +20,7 @@ export const BodyContent = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 30px;
     padding: 0 20px;
     border-radius: 0 0 10px 10px;
     background: white;
@@ -28,7 +29,7 @@ export const BodyContent = styled.div`
         margin-top: 30px;
 
        strong{
-           margin-left: 30px;
+           /* margin-left: 30px; */
        }    
 
     }
@@ -36,7 +37,7 @@ export const BodyContent = styled.div`
     ul{
         background: #ebebe6;
         width: 18vw;
-        margin-left: 30px;
+        /* margin-left: 30px; */
         list-style-type:none;
         padding: 1px 3px 3px 3px;
         
@@ -52,6 +53,7 @@ export const BodyContent = styled.div`
             font-size: 10px;
             color: black;
             margin-top: 3px;
+            cursor: pointer;
 
             display: flex;
             justify-content: space-between;
@@ -65,9 +67,18 @@ export const BodyContent = styled.div`
                 font-weight: 700;
             }
 
-            :hover{
-                box-shadow:0px 0px 0px 1px red inset;
+            
+            &.selected{
+                box-shadow:0px 0px 0px 1px #cc0066 inset;
             }
+            &.notSelected{
+                box-shadow:0px 0px 0px 0px red inset;
+
+            }
+
+            /* :hover{
+                box-shadow:0px 0px 0px 1px red inset;
+            } */
 
         }
 

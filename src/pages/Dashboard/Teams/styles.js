@@ -138,7 +138,7 @@ export const BodyContent = styled.div`
     .delete,
     .share,
     .edit{
-        &:hover {
+        :hover {
             color: blue;
 
         }

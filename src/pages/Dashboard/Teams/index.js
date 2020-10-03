@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import { BsPlusSquareFill } from "react-icons/bs";
 import { MdShare, MdCreate, MdDelete } from 'react-icons/md'
@@ -12,18 +13,19 @@ const Teams = () =>{
 
                 <HeaderContent>
                     <h1>My teams</h1>
-
-                        <BsPlusSquareFill color="purple" size={30} />
+                        <Link to="/creating">
+                            <BsPlusSquareFill color="purple" size={30} />
+                        </Link>
   
                 </HeaderContent>
                 <SearchOrder>
-                    <select className="nameSelect">
-                        <option value="none" selected disabled hidden> 
+                    <select className="nameSelect" defaultValue="name">
+                        <option value="name" disabled hidden> 
                             Name
                         </option>     
                     </select> 
-                    <select className="descriptionSelect">
-                        <option value="none" selected disabled hidden> 
+                    <select className="descriptionSelect" defaultValue="description">
+                        <option value="description" disabled hidden> 
                             Description 
                         </option>     
                         
@@ -37,7 +39,7 @@ const Teams = () =>{
                         <div>
                             <MdDelete className="delete" />
                             <MdShare className="share" />
-                            <span class="tooltiptext">Edit</span>
+                            <span className="tooltiptext">Edit</span>
 
                             <MdCreate className="edit" />
                         </div>

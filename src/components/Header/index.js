@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import logoImg from '../../assets/venturus.png'
 import logoImgIc from '../../assets/ic.png'
@@ -9,8 +10,10 @@ const Header = () =>{
     return(
         <HeaderStyle>
         <div className="leftHeader">
-            <img src={logoImg} alt="venturus"  width={50} height={50} />
-            <strong>Squad Management Tool</strong>
+            <Link to="/">
+                <img src={logoImg} alt="venturus"  width={50} height={50} />
+            </Link>
+                <strong>Squad Management Tool</strong>
         </div>
 
         <div className="rightHeader">
