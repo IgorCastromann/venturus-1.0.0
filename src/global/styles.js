@@ -30,6 +30,35 @@ const GlobalStyles = createGlobalStyle`
         }
     }
 
+    @media(max-width: 900px){
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+
+    .body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .bodyRight{
+            margin-left: 30px;
+            padding: 0;
+            min-width: 500px;
+        }
+    }
+
+
+    }
+
+
+
 
 `
 export default GlobalStyles

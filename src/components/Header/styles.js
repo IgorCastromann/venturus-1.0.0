@@ -5,7 +5,7 @@ export const Header = styled.div`
     background: linear-gradient(to right, #cc0066 4%, #990099 92%);
     color: white;
     padding: 5px 50px;
-
+    /* width: 100vw; */
 
     display: flex;
     align-items: center;

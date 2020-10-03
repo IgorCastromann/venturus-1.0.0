@@ -10,7 +10,8 @@ export const Content = styled.div`
     /* padding: 10px 30px; */
     margin-top: 3vh;
 
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 10px 10px;
+
     color: white;
 
     display: flex;

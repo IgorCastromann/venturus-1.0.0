@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 import { BsPlusSquareFill } from "react-icons/bs";
 import { MdShare, MdCreate, MdDelete } from 'react-icons/md'
 
@@ -12,8 +11,10 @@ const Teams = () =>{
 
 
                 <HeaderContent>
-                    <h1>My teams</h1>   
-                    <BsPlusSquareFill color="purple" size={30} />
+                    <h1>My teams</h1>
+
+                        <BsPlusSquareFill color="purple" size={30} />
+  
                 </HeaderContent>
                 <SearchOrder>
                     <select className="nameSelect">

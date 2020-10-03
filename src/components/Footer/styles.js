@@ -14,7 +14,6 @@ export const Footer = styled.footer`
     display: flex;
     align-items: center;
     justify-content: center;
-
   
         h2{
             font-weight: 300;
@@ -25,5 +24,8 @@ export const Footer = styled.footer`
         }
     }
 
+    @media(max-width: 550px){
+        visibility: hidden;
+    }
  
 `

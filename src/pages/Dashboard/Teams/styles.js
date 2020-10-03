@@ -4,10 +4,24 @@ export const Content = styled.div`
     background: white;
     max-width: 45vw;
     margin: 40px 0 0 50px;
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 10px 10px;
     
+    max-height: 85vh;
 
-    max-height: 87vh;
+    @media(max-width:900px){
+        margin:30px 0 0 0;
+        padding: 0;
+
+        min-width: 500px;
+
+        .descriptionSelect{
+            min-width: 375px
+        }
+
+        .nameSelect{
+            min-width: 70px;
+        }
+    }
 `
 
 export const HeaderContent = styled.div`
@@ -133,4 +147,5 @@ export const BodyContent = styled.div`
                 visibility: hidden;
 
             } */
+
 `

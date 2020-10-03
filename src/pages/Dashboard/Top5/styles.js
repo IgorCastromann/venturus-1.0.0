@@ -71,5 +71,11 @@ export const BodyContent = styled.div`
 
         }
 
+        @media(max-width:900px){
+            margin: 5px 0 5px 10px;
+            min-width: 200px;
+        
+        }
+
     }
 `

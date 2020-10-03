@@ -11,6 +11,7 @@ const Dashboard = () => {
     return(
         <>
             <Header />
+            <section className="content" >
                 <section className="body">
                     <Teams />
                     <section className="bodyRight">
@@ -18,6 +19,7 @@ const Dashboard = () => {
                         <MostLeast />
                     </section>
                 </section>
+            </section>
             <Footer  />
         </>
     )
