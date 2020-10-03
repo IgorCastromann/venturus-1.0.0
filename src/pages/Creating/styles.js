@@ -59,8 +59,60 @@ export const BodyContent = styled.section`
 
 
     .tagsArea{
+
+        display: flex;
+        align-items: flex-start;
+
+        padding: 20px 0;
+        
+
+
         height: 7vh;
-        width: 100%;
+        width: 70vw;
+
+        border: 1px solid;
+
+        ul{
+            display: flex;
+            align-items: center;
+            padding: 0 5px;
+            margin: 0;
+            
+            list-style-type:none;
+
+            li{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 12.5px;
+
+
+
+                background: red;
+
+                padding: 1px 3px;
+                border-radius: 20px;
+
+                margin-left: 0;
+                margin-right:10px;
+            }
+        }
+        input{
+            border: none;
+            margin-left: 5px;
+
+
+
+            :focus-within{
+                outline: transparent;
+            }
+        }
+
+        @media(min-width: 600px){
+            width: 35vw;
+        }
+
     }
 
     strong{
@@ -99,10 +151,10 @@ export const BodyContent = styled.section`
             display: flex;
             flex-direction: row;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             padding: 0 30px;
 
-            width: auto;
+            width: 0vw;
 
             gap: 80px;
 
@@ -122,8 +174,11 @@ export const BodyContent = styled.section`
             .right{
                 width: auto;
 
+                .teamWeb{
+                    max-width: 100%;
+                }
                 input{
-                    width: 30vw;
+                    /* width: auto; */
                 }
             }
         }

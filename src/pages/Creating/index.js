@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
+import { FiX } from 'react-icons/fi'
 
 import axios from 'axios'
 
 
 import Header from '../../components/Header'
 import searchPlayer from '../../utils/searchPlayer'
-import handleAddTag from '../../utils/handleAddTag'
+// import handleAddTag from '../../utils/handleAddTag'
 
 
 // import Footer from '../../components/Footer'
@@ -15,6 +16,20 @@ import { Content, HeaderContent, BodyContent, RoundCheck, TeamType, Field, Butto
 
 const Creating = () =>{
     const [players, setPlayers] = useState([])
+    const [tags, setTags] = useState(['NodeJS'])
+
+    function handleAddTag(event){
+        console.log(event.key)
+        if (event.key === 'Enter' || event.key === ';'){
+            setTags([...tags, event.target.value])
+            event.target.value = ''
+        }
+    }
+
+    function removeTags(indexToRemove){
+		setTags([...tags.filter((_, index) => index !== indexToRemove)]);
+	};
+
     useEffect(()=>{
         
             axios.get(`https://pokeapi.co/api/v2/pokemon/1`).then((res)=>{
@@ -45,7 +60,7 @@ const Creating = () =>{
 
                         <div className="right">
                             <h1>Team website</h1>
-                            <input type="text" placeholder="http://myteam.com" />
+                            <input type="text" placeholder="http://myteam.com" className="teamWeb" />
                             <TeamType>
                                 <h1>Team type</h1>
                                 <div className="roundCheckDiv">
@@ -53,7 +68,20 @@ const Creating = () =>{
                                     <RoundCheck /> <label>Fantasy</label>                                 
                                 </div>
                                 <h1>Tags</h1>
-                              
+                                <div className="tagsArea">
+                                    <ul>
+                                        {tags.map((tag, index)=>(
+                                            <li key={index}>
+                                                <span>{tag}</span>
+                                                <FiX onClick={() => removeTags(index)} />
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <input 
+                                        placeholder="Press enter or ; to add tags" 
+                                        onKeyPress={handleAddTag} 
+                                    />
+                                </div>
                             </TeamType>
                         </div>
                     </div>
