@@ -18,6 +18,19 @@ const Creating = () =>{
     const [players, setPlayers] = useState([])
     const [tags, setTags] = useState([])
 
+
+   function selected(type){
+
+    const select = document.getElementById(`label-${type}`)
+    if( select.className !== 'selected'){
+        select.className = 'selected'
+    }else{
+        select.className = 'notSelected'
+
+    }
+    
+   }
+
     function handleAddTag(event){
         console.log(event.key)
         if (event.key === 'Enter' || event.key === ';'){
@@ -64,8 +77,8 @@ const Creating = () =>{
                             <TeamType>
                                 <h1>Team type</h1>
                                 <div className="roundCheckDiv">
-                                    <RoundCheck className="roundCheck"  /> <label>Real</label>
-                                    <RoundCheck /> <label>Fantasy</label>                                 
+                                        <RoundCheck type="radio" name="teamType" value="real" id="real" defaultChecked onClick={(ev)=>{selected(ev.currentTarget.id)}} /> <label id="label-real" className="selected" htmlFor="real">Real</label>
+                                        <RoundCheck type="radio" name="teamType" value="fantasy" id="fantasy" onClick={(ev)=>{selected(ev.currentTarget.id)}} /> <label id="label-fantasy" htmlFor="fantasy">Fantasy</label>                            
                                 </div>
                                 <h1>Tags</h1>
                                 <div className="tagsArea">

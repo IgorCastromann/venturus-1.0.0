@@ -89,7 +89,7 @@ export const BodyContent = styled.section`
 
 
 
-                background: red;
+                background: #cc0066;
 
                 padding: 1px 3px;
                 border-radius: 20px;
@@ -136,7 +136,7 @@ export const BodyContent = styled.section`
 
     .right{
 
-        input{
+        .teamWeb{
             width: 100%
         }
     }
@@ -230,47 +230,59 @@ export const BodyContent = styled.section`
 `
 
 export const RoundCheck = styled.input`
- 
+    margin: 0;
 
+    outline: transparent;
 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    border-color: purple;
     background: white;
-    border: 1px solid #3d3d3d;
-    border-radius: 50%;
+    border: 1px solid #999;
     cursor: pointer;
-    max-height: 20px;
-    max-width: 20px;
-    /* margin-right: 20px; */
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
 
-
-    :hover{
-
+    :checked {
+        border: inset white;
         background: purple;
-
-        /* position: absolute;
-        display: none; */
-
     }
+
+
+
 
 `
 export const TeamType = styled.div`
     display: flex;
-    align-items: left;
+    align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     
     /* padding-left: 10px; */
 
-    .roundCheckDiv{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 80px;
-        margin-right: 80px;
-
         label{
-            margin-left: 25px;
+            color: #999;
+            margin-left: 10px;
+            margin-right: 20px;
+            cursor: pointer;
+            :hover{
+                color: purple;
+            }
+            :checked & span{
+                background: purple;
+                color: purple;
+            }
         }
-    }
+
+        .selected{
+            color: purple
+        }
+        .notselected{
+            color: #999;
+        }
 `
 
 export const Field = styled.section`
