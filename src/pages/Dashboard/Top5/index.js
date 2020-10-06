@@ -1,9 +1,45 @@
-import React from 'react'
+import React, { useState, useEffect  } from 'react'
 
 import { HeaderContent, BodyContent } from './styles'
+import axios from 'axios'
 
 
 const Top5 = ()=>{
+    const [infoTeams, setInfoTeams] = useState([
+        {
+            name: 'Inter Milan',
+            avgAge: 31.9,
+        },
+        {
+            name: 'Juventus',
+            avgAge: 31.3,
+        },
+        {
+            name: 'Barcelona',
+            avgAge: 31.4,
+        },
+        {
+            name: 'APOEL',
+            avgAge: 31.7,
+        },
+        {
+            name: 'AC Milan',
+            avgAge: 31.6,
+        },
+    ])
+
+    useEffect(()=>{
+        const credentials = {
+            email: 'castromann@live.com',
+            password: '4ae2fdb8beab467d8fbe703009a447f1'
+          }
+    
+        axios.get('http://api.football-data.org/v2/competitions/2037', credentials).then((res)=>{
+            console.log(res)
+        })
+    },[])
+
+
     function styleFn(element) {
 
         if(element.className !== 'selected'){
@@ -47,7 +83,7 @@ const Top5 = ()=>{
 
                 </div>
                 <div>  
-                    <strong>Lowest avg agr</strong>
+                    <strong>Lowest avg age</strong>
                     <ul>
                         <li onClick={(ev)=> styleFn(ev.currentTarget)} >
                             <h1>Arsenal FC</h1>

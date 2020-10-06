@@ -49,28 +49,52 @@ export const SearchOrder = styled.div`
 
     border: none;
     height: 60px;
-    padding: 10px 30px;
+    padding: 10px 10px 10px 30px;
 
     border-radius: 5px;
     border-bottom: 0.2px groove rgba(227, 218, 218, .5) ;
 
 
     .nameSelect{
-        width: 10vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        width: 15vw;
         border: none;
         height: 30px;
         border-right: 0.2px groove rgba(227, 218, 218, .5);
-
-      
     }
 
     .descriptionSelect{
         margin-left: 20px;
         height: 30px;
 
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
         border: none;
         width: 40vw;
+    }
+
+    .divSort{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        margin: 0;
+        padding: 0;
+        
+        svg{
+            margin: 0;
+            padding: 0;
+            width: 15px;
+            height: 10px;
+            cursor: pointer;
+
+        }
     }
 `
 
@@ -83,6 +107,7 @@ export const BodyContent = styled.div`
 
     border-radius: 5px;
     border-bottom: 0.2px groove rgba(227, 218, 218, .5) ;
+
 
    .squad{
         display: flex;
@@ -117,10 +142,13 @@ export const BodyContent = styled.div`
         background: rgba(186, 82, 177, 0.2);
 
         color: #990099;
+        .actions{
+            visibility: visible;
+        }
     }
 
     .tooltiptext{
-        /* visibility: hidden; */
+        visibility: hidden;
     width: 70px;
     background-color: black;
     color: #fff;
@@ -134,18 +162,24 @@ export const BodyContent = styled.div`
 
     }
 
+    .actions{
+        margin: 0;
+        display: flex;
+        visibility: hidden;
+    }
 
     .delete,
     .share,
-    .edit{
-        :hover {
-            color: blue;
+    .edit,
+    .tooltip{
+        margin:0 1px 0 0;
 
+        :hover {
+
+            .tooltiptext{
+                visibility: visible;
+            }
         }
     }
-    /* .tooltiptext{
-                visibility: hidden;
-
-            } */
 
 `

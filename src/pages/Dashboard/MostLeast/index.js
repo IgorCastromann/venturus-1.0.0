@@ -19,7 +19,7 @@ const MostLeast = () =>{
             </div>
 
             <div className="right">
-                <h1>Most picked player</h1>  
+                <h1>Less picked player</h1>  
                 <div className="image">
                     <img src={imgLeast} alt="player X" width={80} height={80} />
                     <div>

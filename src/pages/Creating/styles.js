@@ -54,6 +54,7 @@ export const BodyContent = styled.section`
             input{
                 width: 60vw;
             }
+
         }
     }
 
@@ -65,12 +66,13 @@ export const BodyContent = styled.section`
 
         padding: 20px 0;
         
+        border: 1px solid #999;
+        border-radius: 5px;
 
 
         height: 7vh;
         width: 70vw;
 
-        border: 1px solid;
 
         ul{
             display: flex;
@@ -137,7 +139,7 @@ export const BodyContent = styled.section`
     .right{
 
         .teamWeb{
-            width: 100%
+            width: 97%
         }
     }
 
@@ -158,16 +160,26 @@ export const BodyContent = styled.section`
 
             gap: 80px;
 
-            .left{
-                margin: 0;
 
-                
+            .left{
+                margin: 0;     
                 input{
+                    padding: 5px;
                     width: 30vw;
+                    border: 1px solid #999;
+                    border-radius: 5px;
+
                 }
 
                 .inputDescription{
-                    height: 20vh;
+                    resize: none;
+
+                    border: 1px solid #999;
+                    border-radius: 5px; 
+
+                    margin-bottom: -10px;
+                    width: 98%;
+                    height: 25.5vh;
                 }
             }
 
@@ -176,10 +188,12 @@ export const BodyContent = styled.section`
 
                 .teamWeb{
                     max-width: 100%;
+                    border: 1px solid #999;
+                    border-radius: 5px;
+
+                    padding: 5px;
                 }
-                input{
-                    /* width: auto; */
-                }
+
             }
         }
 
@@ -248,7 +262,7 @@ export const RoundCheck = styled.input`
 
     :checked {
         border: inset white;
-        background: purple;
+        background: #cc0066;
     }
 
 
@@ -261,24 +275,23 @@ export const TeamType = styled.div`
     justify-content: center;
     flex-direction: column;
     
-    /* padding-left: 10px; */
+    .roundCheckDiv{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
 
         label{
             color: #999;
             margin-left: 10px;
             margin-right: 20px;
             cursor: pointer;
-            :hover{
-                color: purple;
-            }
-            :checked & span{
-                background: purple;
-                color: purple;
-            }
+ 
+
         }
 
         .selected{
-            color: purple
+            color: #cc0066;
         }
         .notselected{
             color: #999;
@@ -307,6 +320,7 @@ export const Button = styled.button`
     height: 30px;
     margin-top: 20px;
     cursor: pointer;
+    outline: transparent;
     background: linear-gradient(to right, #cc0066 4%, #990099 92%);
     
     border: white;

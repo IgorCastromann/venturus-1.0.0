@@ -6,7 +6,6 @@ import axios from 'axios'
 
 import Header from '../../components/Header'
 import searchPlayer from '../../utils/searchPlayer'
-// import handleAddTag from '../../utils/handleAddTag'
 
 
 // import Footer from '../../components/Footer'
@@ -18,21 +17,37 @@ const Creating = () =>{
     const [players, setPlayers] = useState([])
     const [tags, setTags] = useState([])
 
-
-   function selected(type){
-
-    const select = document.getElementById(`label-${type}`)
-    if( select.className !== 'selected'){
-        select.className = 'selected'
-    }else{
-        select.className = 'notSelected'
-
+    function validade(event){
+        const h1 = document.getElementById(`${event.currentTarget.id}-h1`)
+        if (event.key === 'Enter' || event.key === 'Tab'){
+            if(event.currentTarget.value === ''){
+                h1.style.color = '#cc0066'
+                event.currentTarget.style.borderColor = '#cc0066'
+            }else{
+                h1.style.color = 'black'
+                event.currentTarget.style.borderColor = '#999'
+            }
+        }
     }
-    
-   }
+
+    function selected(type){
+
+        const selectLabelReal = document.getElementById('label-real')
+        const selectLabelFantasy = document.getElementById('label-fantasy')
+
+        if(type === 'real' && selectLabelReal.className !== 'selected'){
+            selectLabelReal.className = 'selected'
+            selectLabelFantasy.className = 'notSelected'
+        }
+        
+        if(type === 'fantasy' && selectLabelFantasy.className !== 'selected'){
+            selectLabelReal.className = 'notSelected'
+            selectLabelFantasy.className = 'selected'
+        }
+        
+    }
 
     function handleAddTag(event){
-        console.log(event.key)
         if (event.key === 'Enter' || event.key === ';'){
             setTags([...tags, event.target.value])
             event.target.value = ''
@@ -52,6 +67,8 @@ const Creating = () =>{
             )
 
     },[])
+
+
     return(
         <>
             <Header />
@@ -59,21 +76,24 @@ const Creating = () =>{
                 <HeaderContent>
                         <h1>Create your team</h1>
                 </HeaderContent>
+                
+                {/* <form  name="register"> */}
                 <BodyContent>
+
                     <strong>TEAM INFORMATION</strong>
                     <div className="teamInformation">
                         <div className="left">
-                            <h1>Team name</h1>
-                            <input type="text" placeholder="insert team name" />
+                            <h1 id="insert-team-name-h1">Team name</h1>
+                            <input type="text" placeholder="insert team name" id="insert-team-name" onKeyDown={(ev)=> validade(ev) } />
 
-                            <h1>Description</h1>
-                            <input type="text" className="inputDescription" />
+                            <h1 id="insert-description-h1">Description</h1>
+                            <textarea type="text"  className="inputDescription" id="insert-description" onKeyPress={(ev)=> validade(ev)} />
                         </div>
 
 
                         <div className="right">
-                            <h1>Team website</h1>
-                            <input type="text" placeholder="http://myteam.com" className="teamWeb" />
+                            <h1 id="insert-my-team-h1">Team website</h1>
+                            <input type="text" placeholder="http://myteam.com" className="teamWeb" id="insert-my-team" onKeyDown={(ev)=> validade(ev) }/>
                             <TeamType>
                                 <h1>Team type</h1>
                                 <div className="roundCheckDiv">
@@ -102,23 +122,23 @@ const Creating = () =>{
                     <strong className="strongSquad">CONFIGURE SQUAD</strong>
                     <div className="configureSquad">
                         <div className="left">
-                            <strong>Formation</strong>
-                            <select name="formation" id="">
-                                <option value="1">3 - 2 - 2 - 3</option>
-                                <option value="1">3 - 2 - 3 - 1</option>
-                                <option value="1">3 - 4 - 3</option>
-                                <option value="1">3 - 5 - 2</option>
-                                <option value="1">4 - 2 - 3 - 1</option>
-                                <option value="1">4 - 3 - 1 - 1</option>
-                                <option value="1">4 - 3 - 2</option>
-                                <option value="1">4 - 4 - 2</option>
-                                <option value="1">4 - 5 - 1</option>
-                                <option value="1">5 - 4 - 1</option>
-                            </select>
-                            <Field>
+                                <strong>Formation</strong>
+                                <select name="formation" id="">
+                                    <option value="1">3 - 2 - 2 - 3</option>
+                                    <option value="2">3 - 2 - 3 - 1</option>
+                                    <option value="3">3 - 4 - 3</option>
+                                    <option value="4">3 - 5 - 2</option>
+                                    <option value="5">4 - 2 - 3 - 1</option>
+                                    <option value="6">4 - 3 - 1 - 1</option>
+                                    <option value="7">4 - 3 - 2</option>
+                                    <option value="8">4 - 4 - 2</option>
+                                    <option value="9">4 - 5 - 1</option>
+                                    <option value="10">5 - 4 - 1</option>
+                                </select>
+                                <Field />
 
-                            </Field>
-                            <Button>Save</Button>
+                                <Button type="submit">Save</Button>
+
                         </div>
                         <div className="right">
                             <h1>Search Players</h1>
@@ -195,7 +215,9 @@ const Creating = () =>{
                         </div>
 
                     </div>
+
                 </BodyContent>
+                {/* </form> */}
 
             </Content>
             {/* <Footer /> */}
