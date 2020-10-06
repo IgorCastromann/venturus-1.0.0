@@ -203,20 +203,15 @@ export const BodyContent = styled.section`
         display: flex;
         flex-direction: row;
         align-items: flex-start;
-        justify-content: space-between;
-        width: 80vw;
+        justify-content: center;
+        width: 100%;
 
         padding: 30px;
 
-
-        gap: 70px;
-
-
+        gap: 50px;
 
         .left{
             width: auto;
-
-
             strong{
                 color: black;
             }    
@@ -232,7 +227,7 @@ export const BodyContent = styled.section`
                     width: fit-content;
                 }
                 input{
-                    width: 40vw;
+                    width: 35vw;
                 }
             }
         }
@@ -393,7 +388,7 @@ export const Results = styled.div`
 
 
     @media(min-width:600px){
-        min-width: 35vw;
+        /* min-width: 35vw; */
         max-width: 40vw;
         height: 25px;
         margin-top: 5px;

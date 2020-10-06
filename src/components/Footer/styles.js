@@ -2,15 +2,16 @@ import styled from 'styled-components'
 
 
 export const Footer = styled.footer`
-    position:absolute;
+    position: fixed;
     left:0;
     bottom: 0;
     right:0;
     background: #bebebe;
     color: white;
     padding: 10px;
+    height: 10px;
 
-
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,9 +24,4 @@ export const Footer = styled.footer`
             font-weight: 600;
         }
     }
-
-    @media(max-width: 550px){
-        visibility: hidden;
-    }
- 
 `

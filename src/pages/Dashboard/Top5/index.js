@@ -1,7 +1,7 @@
 import React, { useState, useEffect  } from 'react'
 
 import { HeaderContent, BodyContent } from './styles'
-import axios from 'axios'
+// import axios from 'axios'
 
 
 const Top5 = ()=>{
@@ -26,18 +26,40 @@ const Top5 = ()=>{
             name: 'AC Milan',
             avgAge: 31.6,
         },
+        {
+            name: 'Arsenal FC',
+            avgAge: 21.1,
+        },
+        {
+            name: 'Lazio',
+            avgAge: 21.6,
+        },
+        {
+            name: 'Real Madrid',
+            avgAge: 22.1,
+        },
+        {
+            name: 'Liverpool',
+            avgAge: 22.2,
+        },
+        {
+            name: 'Bayern',
+            avgAge: 22.5,
+        },
     ])
 
+    const [fiveHighest, setFiveHighest] = useState([])
+    const [fiveLowest, setFiveLowest] = useState([])
+
     useEffect(()=>{
-        const credentials = {
-            email: 'castromann@live.com',
-            password: '4ae2fdb8beab467d8fbe703009a447f1'
-          }
-    
-        axios.get('http://api.football-data.org/v2/competitions/2037', credentials).then((res)=>{
-            console.log(res)
-        })
-    },[])
+        const sortedTeams = infoTeams.sort((a, b) => (a.avgAge > b.avgAge) ? -1 : 1);
+        const top5 = sortedTeams.slice(0, 5);
+        const least5 = sortedTeams.slice(-5);
+
+        setFiveHighest([...top5])
+        setFiveLowest([...least5])
+
+    },[infoTeams])
 
 
     function styleFn(element) {
@@ -59,54 +81,26 @@ const Top5 = ()=>{
                 <div>  
                     <strong>Highest avg age</strong>
                     <ul>
-                        <li onClick={(ev)=> styleFn(ev.currentTarget)} >
-                            <h1>Inter Milan</h1>
-                            <h2>31.9</h2>
-                        </li>
-                        <li onClick={(ev)=> styleFn(ev.currentTarget)} >
-                            <h1>APOEL</h1>
-                            <h2>31.7</h2>
-                        </li>
-                        <li onClick={(ev)=> styleFn(ev.currentTarget)}>
-                            <h1>AC Milan</h1>
-                            <h2>31.6</h2>
-                        </li>
-                        <li onClick={(ev)=> styleFn(ev.currentTarget)} >
-                            <h1>Barcelona</h1>
-                            <h2>31.4</h2>
-                        </li>
-                        <li onClick={(ev)=> styleFn(ev.currentTarget)} >
-                            <h1>Juventus</h1>
-                            <h2>31.3</h2>
-                        </li>
+                        {fiveHighest.map(team=> 
+                            (
+                            <li key={team.name} onClick={(ev)=> styleFn(ev.currentTarget)} >
+                                <h1>{team.name}</h1>
+                                <h2>{team.avgAge}</h2>
+                            </li>
+                        ))}
                     </ul>
 
                 </div>
                 <div>  
                     <strong>Lowest avg age</strong>
                     <ul>
-                        <li onClick={(ev)=> styleFn(ev.currentTarget)} >
-                            <h1>Arsenal FC</h1>
-                            <h2>21.1</h2>
-                        </li>
-                        <li onClick={(ev)=> styleFn(ev.currentTarget)} >
-                            <h1>Lazio</h1>
-                            <h2>21.6</h2>
-                        </li>
-                        <li onClick={(ev)=> styleFn(ev.currentTarget)} >
-                            <h1>Real Madrid</h1>
-                            <h2>22.0</h2>
-                        </li>
-                        <li onClick={(ev)=> styleFn(ev.currentTarget)} >
-                            <h1>Liverpool</h1>
-                            <h2>22.1</h2>
-                        </li>
-                        <li onClick={(ev)=> styleFn(ev.currentTarget)} >
-                            <h1>Bayern</h1>
-                            <h2>22.5</h2>
-                        </li>
+                        {fiveLowest.map(team =>(
+                            <li key={team.name} onClick={(ev)=> styleFn(ev.currentTarget)} >
+                                <h1>{team.name}</h1>
+                                <h2>{team.avgAge}</h2>
+                            </li>
+                        ))}
                     </ul>
-
                 </div>
             </BodyContent>
         </>

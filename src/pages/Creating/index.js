@@ -8,7 +8,7 @@ import Header from '../../components/Header'
 import searchPlayer from '../../utils/searchPlayer'
 
 
-// import Footer from '../../components/Footer'
+import Footer from '../../components/Footer'
 import { Content, HeaderContent, BodyContent, RoundCheck, TeamType, Field, Button, Results, F, S  } from './styles'
 
 
@@ -77,7 +77,6 @@ const Creating = () =>{
                         <h1>Create your team</h1>
                 </HeaderContent>
                 
-                {/* <form  name="register"> */}
                 <BodyContent>
 
                     <strong>TEAM INFORMATION</strong>
@@ -146,31 +145,13 @@ const Creating = () =>{
                                 console.log(`Pressed keyCode ${ev.key}`);
                                 if (ev.key === 'Enter') {
 
-                                // console.log(`ev ${ev}`);
+                                    const plays = searchPlayer(ev.currentTarget.value);
 
-                                const plays = searchPlayer(ev.currentTarget.value);
-
-                                   setPlayers(plays)
+                                    setPlayers(plays)
 
                                 }
                             }} />
 
-                                {players && players.map(player => (
-                                    <Results key={player.id}>
-                                        
-                                        <div className="line1">
-                                            <F>
-                                                <h1>Name:</h1> <p>{player.name}</p>
-                                            </F> 
-                                            <S>
-                                                <h2>Age:</h2> <p>{player.weight}</p>
-                                            </S>
-                                        </div>
-                                        <div className="line2">
-                                            <h1> Nacionality:</h1> <p>{player.id}</p>  
-                                        </div>
-                                    </Results>
-                                ))}
                             <Results>
                                 <div className="line1">
                                     <F>
@@ -217,10 +198,9 @@ const Creating = () =>{
                     </div>
 
                 </BodyContent>
-                {/* </form> */}
 
             </Content>
-            {/* <Footer /> */}
+            <Footer />
         </>
     )
 }
