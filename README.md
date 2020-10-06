@@ -1,5 +1,29 @@
-Projeto-teste com intuito de demonstrar minhas habilidades, pensamentos, conhecimentos e explicar as decisões pelas quais fui seguindo:
+<img alt="Field" src="https://images.cdn2.stockunlimited.net/preview1300/soccer-banner-with-france-flag_1819372.jpg" />
 
+<h3 align="center">
+  Projeto teste - Squad Management Tool
+</h3>
+
+<p align="center">
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-tecnologias">Como rodar o projeto</a>&nbsp;&nbsp;&nbsp;
+</p>
+
+<blockquote align="center">been there, done that!</blockquote>
+
+<p align="center">
+  <a> </a>
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/IgorCastromann/venturus-1.0.0?color=2304D361">
+  <img alt="Last commit on GitHub" src="https://img.shields.io/github/last-commit/IgorCastromann/venturus-1.0.0?color=2304D361">
+  <img alt="Made by Igor Castro" src="https://img.shields.io/badge/made%20by-Igor Castro-%20?color=2304D361">
+  <img alt="Project top programing language" src="https://img.shields.io/github/languages/top/IgorCastromann/venturus-1.0.0?color=2304D361">
+</p>
+
+
+## 💻 Projeto 
+
+Projeto-teste com intuito de demonstrar minhas habilidades, pensamentos, conhecimentos e explicar as decisões pelas quais fui seguindo:
 
 projeto iniciado através do yarn create react-app
 tecnologias e metodologias usadas:
@@ -36,6 +60,55 @@ Como a API que vocês recomendaram era paga, e para montar uma API tomaria um te
 A parte de 'Drag and drop' ficou comprometida pelo fato de eu não conseguir utilizar a API e não ter tido tempo de criar uma.
 
 Não entendi o intuito de colocar uma borda na seção de "top 5", talvez pra dizer quem foi o mais/menos selecionado de cada time? isso não ficou muito claro.
+
+
+## 🚀 Tecnologias
+
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+- [React.JS](https://reactjs.org/)
+
+
+## 🛰 Como rodar o projeto
+### Pré-requisitos
+
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/).
+Além disto é bom ter um editor para trabalhar com o código como _VSCode_
+
+## Rodando o Projeto
+```bash
+$ git clone https://github.com/IgorCastromann/venturus-1.0.0
+
+# Acesse a pasta do projeto no seu terminal/cmd
+$ cd venturus-1.0.0
+
+# Instale as dependências
+$ yarn
+
+# Execute a aplicação em modo de desenvolvimento
+$ yarn start
+
+
+# A aplicação será aberta na porta:3000 - acesse http://localhost:3000
+```
+
+
+
+## :mailbox_with_mail: Get in touch!
+
+
+<a href="https://www.linkedin.com/in/igor-castro-27470672/" target="_blank" >
+  <img alt="Linkedin - Igor Castro" src="https://img.shields.io/badge/Linkedin--%23F8952D?style=social&logo=linkedin">
+</a>&nbsp;&nbsp;&nbsp;
+<a href="mailto:castromann@live.com" target="_blank" >
+  <img alt="Email - Igor Castro" width="35rem" height="25rem" src="https://img2.gratispng.com/20180401/cwe/kisspng-outlook-com-microsoft-outlook-logo-microsoft-offic-outlook-5ac078594dd532.5951870815225631613188.jpg">
+</a> 
+
+---
+
+Made with the spirit of a 🐻 by Igor Castro.
+
 
 
 
