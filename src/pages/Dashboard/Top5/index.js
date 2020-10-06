@@ -52,9 +52,12 @@ const Top5 = ()=>{
     const [fiveLowest, setFiveLowest] = useState([])
 
     useEffect(()=>{
-        const sortedTeams = infoTeams.sort((a, b) => (a.avgAge > b.avgAge) ? -1 : 1);
-        const top5 = sortedTeams.slice(0, 5);
-        const least5 = sortedTeams.slice(-5);
+        const sortedTeamsMost = infoTeams.sort((a, b) => (a.avgAge > b.avgAge) ? -1 : 1);
+        const top5 = sortedTeamsMost.slice(0, 5);
+
+        const sortedTeamsLeast = infoTeams.sort((a, b) => (a.avgAge > b.avgAge) ? 1 : -1);
+
+        const least5 = sortedTeamsLeast.slice(0, 5);
 
         setFiveHighest([...top5])
         setFiveLowest([...least5])
